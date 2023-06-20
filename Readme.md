@@ -10,3 +10,7 @@ To run the dependencies (the BE), you'll have to:
 - Create the backend env vars file `cp backend.env.sample backend.env`
 - Fill in the blanks in `backend.env` with the OpenAI credentials
 - Run `docker-compose up`
+
+## Running FE
+
+Just run `npm install` and `npm start` and you're good to go. We are using a proxy to the BE, so you don't have to worry about CORS, the config is on setupProxy.js
