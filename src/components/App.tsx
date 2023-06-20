@@ -9,6 +9,7 @@ import axios from "axios";
 
 const qs = require("qs");
 const ENDPOINT = "https://qdsp-xizgzxurha-no.a.run.app/api/ask";
+const ENDPOINT_DEV = "/api/ask";
 
 export function App() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,21 +17,31 @@ export function App() {
   const [query, setQuery] = React.useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
+  const [results, setResults] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     if (query) {
+      setIsLoading(true);
       axios
-        .post(ENDPOINT, {
+        .post(ENDPOINT_DEV, {
           q: query,
         })
         .then(function (response) {
           console.log(response);
+          setResults(response.data);
+          setIsLoading(false);
         })
         .catch(function (error) {
           console.log(error);
+          setIsLoading(false);
         });
     }
   }, [query]);
+
+  React.useEffect(() => {
+    console.log("isLoading", isLoading);
+  }, [isLoading]);
 
   function handleSubmit(value) {
     event.preventDefault();
@@ -49,6 +60,8 @@ export function App() {
         handleSubmit={handleSubmit}
         searchField={searchField}
         setSearchField={setSearchField}
+        results={results}
+        isLoading={isLoading}
       />
     );
   }

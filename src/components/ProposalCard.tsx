@@ -13,29 +13,37 @@ import {
 } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 
-export const ProposalCard = () => {
+const politicalSpectre = {
+  pp: "Centro-derecha",
+  psoe: "Centro-izquierda",
+  sumar: "Izquierda",
+  vox: "Derecha",
+  bildu: "Izquierda",
+  pnv: "Centro-derecha",
+  erc: "Izquierda",
+  junts: "Derecha",
+  upn: "Centro-derecha",
+  bng: "Izquierda",
+  cc: "Centro",
+};
+
+export const ProposalCard = ({ party, content }) => {
+  const logoPath = `/logos/${party}.png`;
   return (
-    <Card maxW="md">
+    <Card maxW="md" height={375} key={party}>
       <CardHeader>
         <Flex flex="4">
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-            <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
+            <Avatar name={party} src={logoPath} objectFit="contain" />
             <Box>
-              <Heading size="sm">Segun Adebayo</Heading>
-              <Text>Creator, Chakra UI</Text>
+              <Heading size="sm">{party.toUpperCase()}</Heading>
+              <Text>{politicalSpectre[party]}</Text>
             </Box>
           </Flex>
         </Flex>
       </CardHeader>
       <CardBody>
-        <Text>
-          With Chakra UI, I wanted to sync the speed of development with the
-          speed of design. I wanted the developer to be just as excited as the
-          designer to create a screen. With Chakra UI, I wanted to sync the
-          speed of development with the speed of design. I wanted the developer
-          to be just as excited as the designer to create a screen. With Chakra
-          UI, I wanted to.
-        </Text>
+        <Text>{content.result}</Text>
       </CardBody>
 
       <CardFooter

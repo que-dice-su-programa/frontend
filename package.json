@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "http-proxy-middleware": "^2.0.6",
     "typescript": "latest"
   },
   "scripts": {
