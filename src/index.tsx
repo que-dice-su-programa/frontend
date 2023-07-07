@@ -2,7 +2,8 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import { App } from "./components/App";
+import { Home } from "./components/Home";
+import { Results } from "./components/Results";
 import { AboutUs } from "./components/AboutUs";
 import "./styles.css";
 import "@fontsource/bebas-neue";
@@ -10,7 +11,11 @@ import "@fontsource/bebas-neue";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
+  },
+  {
+    path: "/sobre/:query",
+    element: <Results />,
   },
   {
     path: "/about-us",
