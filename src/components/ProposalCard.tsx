@@ -27,10 +27,18 @@ const politicalSpectre = {
   cc: "Centro",
 };
 
+const colors = {
+  pp: "#16589d",
+  psoe: "#f31a11",
+  sumar: "#e51c55",
+  vox: "#66bc2a",
+};
+
 export const ProposalCard = ({ party, content }) => {
   const logoPath = `/logos/${party}.png`;
   return (
     <Card maxW="md" height={375} key={party}>
+      <Box height={2} backgroundColor={colors[party]} />
       <CardHeader>
         <Flex flex="4">
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
