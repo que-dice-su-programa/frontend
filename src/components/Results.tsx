@@ -2,8 +2,7 @@ import * as React from "react";
 
 import { css } from "@emotion/react";
 
-import { Box, SimpleGrid, Skeleton, Link, Flex } from "@chakra-ui/react";
-import { Header } from "./Header";
+import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text } from "@chakra-ui/react";
 import { SearchBox } from "./SearchBox";
 import { ProposalCard } from "./ProposalCard";
 
@@ -30,7 +29,9 @@ export function Results({
 }) {
   return (
     <Box padding={12} margin="auto" maxWidth={1705}>
-      <Header />
+      <Heading as="h1" textAlign="center" marginBottom="50px">
+        ¿Qué dice su programa sobre <Text as="span" textDecoration="underline">{query}</Text>?
+      </Heading>
       <SimpleGrid
         minChildWidth="300px"
         spacing="40px"
