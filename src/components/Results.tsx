@@ -24,7 +24,6 @@ const ENDPOINT_DEV = "/api/ask";
 export function Results() {
   const { query: rawQuery } = useParams()
   const query = rawQuery.replace(/\+/g, ' ')
-  console.log(query)
   const [results, setResults] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -63,18 +62,10 @@ export function Results() {
       >
         {isLoading ? (
           <>
-            <Box>
-              <Skeleton w={375} height={375} />
-            </Box>
-            <Box>
-              <Skeleton w={375} height={375} />
-            </Box>
-            <Box>
-              <Skeleton w={375} height={375} />
-            </Box>
-            <Box>
-              <Skeleton w={375} height={375} />
-            </Box>
+            <Skeleton maxW="md" height={375} />
+            <Skeleton maxW="md" height={375} />
+            <Skeleton maxW="md" height={375} />
+            <Skeleton maxW="md" height={375} />
           </>
         ) : (
           normalizeResults(results).map((content) => (
