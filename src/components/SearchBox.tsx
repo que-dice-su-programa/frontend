@@ -17,7 +17,6 @@ export const SearchBox = ({ searchField, setSearchField, handleSubmit }) => {
       alignItems="center"
       flexDirection="column"
       padding="16px 8px"
-      position="fixed"
       bottom="0"
       left="0"
       backgroundColor="white"

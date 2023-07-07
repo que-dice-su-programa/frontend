@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Link } from "@chakra-ui/react";
 import { Results } from "./Results";
 import { Header } from "./Header";
 import { SearchBox } from "./SearchBox";
@@ -70,14 +70,29 @@ export function App() {
     <Box padding={12} margin="auto" maxWidth={1650}>
       <Header />
       <SimpleGrid
-        templateRows="4fr 1fr 1fr"
+        templateRows="3fr 1fr 3fr"
         templateColumns="1fr"
         gap={4}
         maxWidth={540}
-        margin="0 auto"
+        margin="100px auto"
         height="calc(100vh - 150px)"
       >
-        <DefaultContent />
+        <div style={{textAlign: "justify"}}>
+        <p>
+          <b>quedicesuprograma.es</b> es un comparador de programas electorales para
+          las elecciones generales del estado español del 23 de Julio de 2023.
+        </p>
+        <br />
+        <p>
+          Utilizamos una combinación de analisis de texto de
+          los <Link>programas electorales</Link> y <Link href="https://openai.com/">ChatGPT</Link> para
+          intentar entender qué porponen los partidos politicos sobre los problemas que preocupan a la ciudadanía.
+        </p>
+        <br />
+        <p>
+          Para saber qué proponen los partidos políticos sobre determinados temas, utiliza la caja de búsqueda debajo 👇
+        </p>
+        </div>
         <SearchBox
           searchField={searchField}
           setSearchField={setSearchField}

@@ -9,6 +9,7 @@
     "@chakra-ui/react": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@fontsource/bebas-neue": "^5.0.4",
     "axios": "^1.4.0",
     "framer-motion": "latest",
     "qs": "^6.11.2",
