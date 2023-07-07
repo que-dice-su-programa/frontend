@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { css } from "@emotion/react";
 
-import { Box, SimpleGrid, Skeleton } from "@chakra-ui/react";
+import { Box, SimpleGrid, Skeleton, Link, Flex } from "@chakra-ui/react";
 import { Header } from "./Header";
 import { SearchBox } from "./SearchBox";
 import { ProposalCard } from "./ProposalCard";
@@ -82,11 +82,13 @@ export function Results({
           <ProposalCard />
         </Box> */}
       </SimpleGrid>
-      <SearchBox
-        searchField={searchField}
-        setSearchField={setSearchField}
-        handleSubmit={handleSubmit}
-      />
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Link href="/">Hacer otra búsqueda</Link>
+      </Flex>
     </Box>
   );
 }
