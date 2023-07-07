@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text } from "@chakra-ui/react";
 import { ProposalCard } from "./ProposalCard";
+import { shuffle } from "../util"
 import axios from "axios";
 
 const normalizeResults = (results) => {
@@ -14,7 +15,8 @@ const normalizeResults = (results) => {
       party: key,
       proposal: results[key],
     }));
-    return values;
+
+    return shuffle(values);
   }
 };
 
