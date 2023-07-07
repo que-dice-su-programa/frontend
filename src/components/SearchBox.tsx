@@ -21,7 +21,7 @@ const proposals = shuffle([
   "el sistema sanitario"
 ])
 
-export const SearchBox = ({ searchField, setSearchField, handleSubmit }) => {
+export const SearchBox = ({ searchField, setSearchField, handleSubmit, autoFocus }) => {
   const [proposalIndex, setProposalIndex] = useState(0);
   const proposal = proposals[proposalIndex]
 
@@ -49,6 +49,7 @@ export const SearchBox = ({ searchField, setSearchField, handleSubmit }) => {
       >
         <InputGroup>
           <Input
+            autoFocus={autoFocus}
             placeholder={proposal}
             height={55}
             value={searchField}

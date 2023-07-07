@@ -44,6 +44,7 @@ export function Home() {
         </p>
         </div>
         <SearchBox
+          autoFocus
           searchField={searchField}
           setSearchField={setSearchField}
           handleSubmit={handleSubmit}

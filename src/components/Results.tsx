@@ -38,7 +38,7 @@ export function Results() {
         })
         .then(function (response) {
           console.log(response);
-          setResults(response.data);
+          setResults(normalizeResults(response.data));
           setIsLoading(false);
         })
         .catch(function (error) {
@@ -70,7 +70,7 @@ export function Results() {
             <Skeleton maxW="md" height={375} />
           </>
         ) : (
-          normalizeResults(results).map((content) => (
+          results.map((content) => (
             <Box w="100%">
               <ProposalCard party={content.party} content={content.proposal} />
             </Box>
