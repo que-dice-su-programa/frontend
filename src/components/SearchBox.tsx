@@ -71,7 +71,7 @@ export const SearchBox = ({ searchField, setSearchField, handleSubmit }) => {
         </InputGroup>
         <Text fontSize="12px" lineHeight="10" color="blackAlpha.600">
           Si quieres saber más sobre este proyecto,{" "}
-          <Link href="/about-us">haz click aquí</Link>
+          <Link href="/quienes-somos">haz click aquí</Link>
         </Text>
       </Flex>
     </Flex>

@@ -30,7 +30,7 @@ export function Home() {
         <div style={{textAlign: "justify"}}>
         <p>
           <b>quedicesuprograma.es</b> es un comparador de programas electorales para
-          las elecciones generales del estado español del 23 de Julio de 2023.
+          las Elecciones Generales del Estado Español del 23 de Julio de 2023.
         </p>
         <br />
         <p>
@@ -40,7 +40,7 @@ export function Home() {
         </p>
         <br />
         <p>
-          Para saber qué proponen los partidos políticos sobre determinados temas, utiliza la caja de búsqueda debajo 👇
+          Para saber qué proponen los partidos políticos sobre un determinado tema, utiliza la caja de búsqueda debajo 👇
         </p>
         </div>
         <SearchBox
