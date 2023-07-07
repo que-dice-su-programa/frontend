@@ -1,10 +1,9 @@
 import * as React from "react";
-
-import { css } from "@emotion/react";
+import { useParams } from 'react-router-dom';
 
 import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text } from "@chakra-ui/react";
-import { SearchBox } from "./SearchBox";
 import { ProposalCard } from "./ProposalCard";
+import axios from "axios";
 
 const normalizeResults = (results) => {
   if (results) {
@@ -19,14 +18,38 @@ const normalizeResults = (results) => {
   }
 };
 
-export function Results({
-  query,
-  searchField,
-  setSearchField,
-  handleSubmit,
-  results,
-  isLoading,
-}) {
+const ENDPOINT = "https://qdsp-xizgzxurha-no.a.run.app/api/ask";
+const ENDPOINT_DEV = "/api/ask";
+
+export function Results() {
+  const { query: rawQuery } = useParams()
+  const query = rawQuery.replace(/\+/g, ' ')
+  console.log(query)
+  const [results, setResults] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    if (query) {
+      setIsLoading(true);
+      axios
+        .post(ENDPOINT_DEV, {
+          q: query,
+        })
+        .then(function (response) {
+          console.log(response);
+          setResults(response.data);
+          setIsLoading(false);
+        })
+        .catch(function (error) {
+          console.log(error);
+          setIsLoading(false);
+        });
+    }
+  }, [query]);
+
+  React.useEffect(() => {
+    console.log("isLoading", isLoading);
+  }, [isLoading]);
   return (
     <Box padding={12} margin="auto" maxWidth={1705}>
       <Heading as="h1" textAlign="center" marginBottom="50px">
