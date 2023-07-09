@@ -89,6 +89,9 @@ export function Results() {
         </Text>
         ?
       </Heading>
+      {isLoading && (
+        <Text textAlign="center">Los 🤖 están recopilando información, a veces tardan unos segundos...</Text>
+      )}
       <SimpleGrid
         minChildWidth="300px"
         spacing="40px"
