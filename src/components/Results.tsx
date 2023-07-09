@@ -82,13 +82,20 @@ export function Results() {
   }, [isLoading]);
   return (
     <Box padding={12} margin="auto" maxWidth={1705}>
-      <Heading as="h1" textAlign="center" marginBottom="50px">
-        ¿Qué dice su programa sobre{" "}
-        <Text as="span" textDecoration="underline">
-          {query}
-        </Text>
-        ?
-      </Heading>
+      <Flex alignItems="center" justify="space-around" flexWrap="wrap" marginBottom="50px">
+        <Heading as="h1" textAlign="center">
+          ¿Qué dice su programa sobre{" "}
+          <Text as="span" textDecoration="underline">
+            {query}
+          </Text>
+          ?
+        </Heading>
+        <Link href="/">
+          <Button variant="ghost" leftIcon={<ChatIcon />}>
+            Hacer otra pregunta
+          </Button>
+        </Link>
+      </Flex>
       <SimpleGrid
         minChildWidth="300px"
         spacing="40px"
@@ -114,11 +121,6 @@ export function Results() {
         <Link href={shareLink(query)} target="_blank">
           <Button variant="ghost" leftIcon={<ArrowUpIcon />}>
             Compartir
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button variant="ghost" leftIcon={<ChatIcon />}>
-            Hacer otra pregunta
           </Button>
         </Link>
       </Flex>
