@@ -23,12 +23,12 @@ const colors = {
 export const ProposalCard = ({ party, content }) => {
   const logoPath = `/logos/${party}.png`;
   return (
-    <Card maxW="md" height={375} key={party}>
+    <Card maxW="md" height={420} key={party}>
       <CardHeader>
         <Heading size="lg">{party.toUpperCase()}</Heading>
       <Box height={2} backgroundColor={colors[party]} />
       </CardHeader>
-      <CardBody>
+      <CardBody maxHeight={256} overflow="scroll">
         <Text>{content.result}</Text>
       </CardBody>
 
