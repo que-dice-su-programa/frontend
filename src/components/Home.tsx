@@ -36,7 +36,7 @@ export function Home() {
         <p>
           Utilizamos una combinación de analisis de texto de
           los <Link>programas electorales</Link> y <Link href="https://openai.com/">ChatGPT</Link> para
-          intentar entender qué porponen los partidos politicos sobre los problemas que preocupan a la ciudadanía.
+          intentar entender qué proponen los partidos politicos sobre los problemas que preocupan a la ciudadanía.
         </p>
         <br />
         <p>

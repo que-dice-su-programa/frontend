@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text } from "@chakra-ui/react";
 import { ProposalCard } from "./ProposalCard";
@@ -20,8 +20,10 @@ const normalizeResults = (results) => {
   }
 };
 
-const ENDPOINT = "https://qdsp-xizgzxurha-no.a.run.app/api/ask";
-const ENDPOINT_DEV = "/api/ask";
+const ENDPOINT =
+  process.env.REACT_APP_ENV === "prod"
+    ? "https://qdsp-xizgzxurha-no.a.run.app/api/ask"
+    : "/api/ask";
 
 export function Results() {
   const { query: rawQuery } = useParams()
@@ -33,7 +35,7 @@ export function Results() {
     if (query) {
       setIsLoading(true);
       axios
-        .post(ENDPOINT_DEV, {
+        .post(ENDPOINT, {
           q: query,
         })
         .then(function (response) {
