@@ -23,7 +23,7 @@ const normalizeResults = (results) => {
 
 const ENDPOINT =
   process.env.REACT_APP_ENV === "prod"
-    ? "https://qdsp-xizgzxurha-no.a.run.app/api/ask"
+    ? "api.quedicesuprograma.es/api/ask"
     : "/api/ask";
 
 const shareLink = (query) => {
