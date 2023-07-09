@@ -1,10 +1,19 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 
-import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  SimpleGrid,
+  Skeleton,
+  Link,
+  Flex,
+  Heading,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 import { ArrowUpIcon, ChatIcon } from "@chakra-ui/icons";
 import { ProposalCard } from "./ProposalCard";
-import { shuffle } from "../util"
+import { shuffle } from "../util";
 import axios from "axios";
 
 const normalizeResults = (results) => {
@@ -23,23 +32,29 @@ const normalizeResults = (results) => {
 
 const ENDPOINT =
   process.env.REACT_APP_ENV === "prod"
-    ? "api.quedicesuprograma.es/api/ask"
+    ? "https://api.quedicesuprograma.es/api/ask"
     : "/api/ask";
 
 const shareLink = (query) => {
-  const path = `/sobre/${encodeURIComponent(query).replace(new RegExp("%20", 'g'), "+")}`
+  const path = `/sobre/${encodeURIComponent(query).replace(
+    new RegExp("%20", "g"),
+    "+"
+  )}`;
 
-  const tweetUrl = 'https://twitter.com/intent/tweet?';
+  const tweetUrl = "https://twitter.com/intent/tweet?";
   var params = new URLSearchParams();
-  params.append('text', `¿Qué dicen los programas de los principales partidos sobre ${query}? 👇`);
-  params.append('url', "https://quedicesuprograma.es" + path);
+  params.append(
+    "text",
+    `¿Qué dicen los programas de los principales partidos sobre ${query}? 👇`
+  );
+  params.append("url", "https://quedicesuprograma.es" + path);
 
   return tweetUrl + params.toString();
-}
+};
 
 export function Results() {
-  const { query: rawQuery } = useParams()
-  const query = rawQuery.replace(/\+/g, ' ')
+  const { query: rawQuery } = useParams();
+  const query = rawQuery.replace(/\+/g, " ");
   const [results, setResults] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -68,7 +83,11 @@ export function Results() {
   return (
     <Box padding={12} margin="auto" maxWidth={1705}>
       <Heading as="h1" textAlign="center" marginBottom="50px">
-        ¿Qué dice su programa sobre <Text as="span" textDecoration="underline">{query}</Text>?
+        ¿Qué dice su programa sobre{" "}
+        <Text as="span" textDecoration="underline">
+          {query}
+        </Text>
+        ?
       </Heading>
       <SimpleGrid
         minChildWidth="300px"
@@ -91,11 +110,7 @@ export function Results() {
           ))
         )}
       </SimpleGrid>
-      <Flex
-        alignItems="center"
-        justify="space-evenly"
-        flexWrap="wrap"
-      >
+      <Flex alignItems="center" justify="space-evenly" flexWrap="wrap">
         <Link href={shareLink(query)} target="_blank">
           <Button variant="ghost" leftIcon={<ArrowUpIcon />}>
             Compartir
