@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useParams } from 'react-router-dom';
 
-import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Skeleton, Link, Flex, Heading, Text, Button } from "@chakra-ui/react";
+import { ArrowUpIcon, ChatIcon } from "@chakra-ui/icons";
 import { ProposalCard } from "./ProposalCard";
 import { shuffle } from "../util"
 import axios from "axios";
@@ -19,6 +20,17 @@ const normalizeResults = (results) => {
     return shuffle(values);
   }
 };
+
+const shareLink = (query) => {
+  const path = `/sobre/${encodeURIComponent(query).replace(new RegExp("%20", 'g'), "+")}`
+
+  const tweetUrl = 'https://twitter.com/intent/tweet?';
+  var params = new URLSearchParams();
+  params.append('text', `¿Qué dicen los programas de los principales partidos sobre ${query}? 👇`);
+  params.append('url', "https://quedicesuprograma.es" + path);
+
+  return tweetUrl + params.toString();
+}
 
 const ENDPOINT = "https://qdsp-xizgzxurha-no.a.run.app/api/ask";
 const ENDPOINT_DEV = "/api/ask";
@@ -71,40 +83,27 @@ export function Results() {
           </>
         ) : (
           results.map((content) => (
-            <Box w="100%">
+            <Box w="100%" maxHeight={450}>
               <ProposalCard party={content.party} content={content.proposal} />
             </Box>
           ))
         )}
-
-        {/* <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box>
-        <Box w="100%">
-          <ProposalCard />
-        </Box> */}
       </SimpleGrid>
       <Flex
-        justifyContent="center"
         alignItems="center"
-        flexDirection="column"
+        justify="space-evenly"
+        flexWrap="wrap"
       >
-        <Link href="/">Hacer otra búsqueda</Link>
+        <Link href={shareLink(query)} target="_blank">
+          <Button variant="ghost" leftIcon={<ArrowUpIcon />}>
+            Compartir
+          </Button>
+        </Link>
+        <Link href="/">
+          <Button variant="ghost" leftIcon={<ChatIcon />}>
+            Hacer otra pregunta
+          </Button>
+        </Link>
       </Flex>
     </Box>
   );

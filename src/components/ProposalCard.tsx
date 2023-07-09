@@ -9,9 +9,7 @@ import {
   CardBody,
   CardFooter,
   Heading,
-  Button,
 } from "@chakra-ui/react";
-import { ArrowUpIcon } from "@chakra-ui/icons";
 
 const colors = {
   pp: "#16589d",
@@ -23,12 +21,12 @@ const colors = {
 export const ProposalCard = ({ party, content }) => {
   const logoPath = `/logos/${party}.png`;
   return (
-    <Card maxW="md" height={420} key={party}>
+    <Card maxW="md" height="100%" key={party}>
       <CardHeader>
         <Heading size="lg">{party.toUpperCase()}</Heading>
       <Box height={2} backgroundColor={colors[party]} />
       </CardHeader>
-      <CardBody maxHeight={256} overflow="scroll">
+      <CardBody overflow="scroll">
         <Text>{content.result}</Text>
       </CardBody>
 
@@ -41,9 +39,6 @@ export const ProposalCard = ({ party, content }) => {
           },
         }}
       >
-        <Button flex="1" variant="ghost" leftIcon={<ArrowUpIcon />}>
-          Share
-        </Button>
       </CardFooter>
     </Card>
   );
