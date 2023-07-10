@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, SimpleGrid, Link } from "@chakra-ui/react";
+import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { Header } from "./Header";
 import { SearchBox } from "./SearchBox";
 const qs = require("qs");
@@ -15,39 +15,50 @@ export function Home() {
     navigate(`/sobre/${encodeURIComponent(query).replace(new RegExp("%20", 'g'), "+")}`)
   }
   return (
-    <Box padding={12} margin="auto" maxWidth={1650}>
-      <Header />
-      <SimpleGrid
-        templateRows="3fr 1fr 3fr"
-        templateColumns="1fr"
-        gap={4}
+    <Flex
+        flexDirection="column"
+        justifyContent="space-between"
+        alignItems="center"
         maxWidth={540}
-        margin="100px auto"
-        height="calc(100vh - 150px)"
+        minHeight="100vh"
+        margin="0 auto"
+        textAlign="justify"
+        padding={12}
       >
-        <div style={{textAlign: "justify"}}>
-        <p>
-          <b>quedicesuprograma.es</b> es un comparador de programas electorales para
-          las Elecciones Generales del Estado Español del 23 de Julio de 2023.
-        </p>
-        <br />
-        <p>
-          Utilizamos una combinación de analisis de texto de
-          los <Link>programas electorales</Link> y <Link href="https://openai.com/">ChatGPT</Link> para
-          intentar entender qué proponen los partidos politicos sobre los problemas que preocupan a la ciudadanía.
-        </p>
-        <br />
-        <p>
-          Para saber qué proponen los partidos políticos sobre un determinado tema, utiliza la caja de búsqueda debajo 👇
-        </p>
-        </div>
+      <Header />
+      <Box
+        maxWidth={540}
+        height="100%"
+        textAlign="justify"
+      >
         <SearchBox
           autoFocus
           searchField={searchField}
           setSearchField={setSearchField}
           handleSubmit={handleSubmit}
         />
-      </SimpleGrid>
-    </Box>
+        <Box marginTop={12}>
+          <p>
+            <b>quedicesuprograma.es</b> es un comparador de programas electorales para
+            las Elecciones Generales del Estado Español del 23 de Julio de 2023.
+          </p>
+          <br />
+          <p>
+            Los programas electorales no siempre son accesibles para la gente de a pie y creemos que es importante que los ciudadanos conozcan
+            las propuestas de los partidos. <em>QueDiceSuPrograma</em> utiliza una combinación
+            de <Link color='teal.500' href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales">Procesamiento del lenguaje natural</Link> sobre
+            los programas electorales y <Link color='teal.500' href="https://openai.com/">ChatGPT</Link> para facilitar el acceso a esta información.
+          </p>
+          <br />
+          <p>
+            Para saber qué proponen los partidos políticos sobre un determinado tema, <b>utiliza la caja de búsqueda de arriba</b>.
+          </p>
+        </Box>
+      </Box>
+      <Text fontSize="12px" lineHeight="10" color="blackAlpha.600" textAlign="center">
+        Si quieres saber más sobre este proyecto,{" "}
+        <Link href="/quienes-somos">haz click aquí</Link>
+      </Text>
+    </Flex>
   );
 }
