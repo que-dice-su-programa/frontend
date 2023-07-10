@@ -32,7 +32,7 @@ export function AboutUs() {
           es facilitar el acceso a la información sobre los programas electorales
           de los partidos, sin ningún interés económico de por medio.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Aviso de responsabilidad</Heading>
           <Text>
           Si bien nos esforzamos por brindar información precisa y coherente, es
           importante tener en cuenta que la información proporcionada en nuestro
@@ -40,7 +40,7 @@ export function AboutUs() {
           deberse a diferentes factores, como datos incorrectos o limitaciones en
           la respuesta generada por la inteligencia artificial que utilizamos.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Lee los programas electorales oficiales</Heading>
           <Text>
           Queremos recordarte que siempre es recomendable leer los programas
           electorales completos en los sitios web oficiales de los partidos
@@ -49,7 +49,7 @@ export function AboutUs() {
           partido. Nuestro servicio pretende ser un complemento útil, pero no
           sustituye la lectura directa de los programas electorales.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>No atribución de información generada</Heading>
           <Text>
           No nos atribuimos la información generada. Nuestro servicio se basa en
           una inteligencia artificial que recopila y resume información sobre los
@@ -57,7 +57,7 @@ export function AboutUs() {
           programas electorales oficiales de los partidos para obtener información
           precisa y completa.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Servicio gratuito</Heading>
           <Text>
           Queremos enfatizar que nuestro servicio es totalmente gratuito. No
           cobramos ninguna tarifa por acceder a la información proporcionada o por
@@ -65,7 +65,7 @@ export function AboutUs() {
           facilitar el acceso a la información política de manera libre y gratuita
           para todos los usuarios interesados.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Costes y limitaciones de acceso</Heading>
           <Text>
           Actualmente, asumimos los costes operativos de nuestro servicio. Sin
           embargo, es importante destacar que estos costes pueden aumentar con el
@@ -74,7 +74,7 @@ export function AboutUs() {
           objetivo principal es seguir brindando este servicio de manera gratuita
           y accesible, y haremos todo lo posible para mantenerlo así.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Patrocinio y donaciones</Heading>
           <Text>
           Aceptamos donaciones y patrocinios para ayudar a cubrir los gastos
           asociados con la operación y el desarrollo de nuestro servicio. Queremos
@@ -84,13 +84,16 @@ export function AboutUs() {
           lo cual, no podemos aceptar ninguna aportación por parte de entidades
           con vinculaciones o actividades políticas.
           </Text>
-          <Heading size="md" marginTop={4}>Independencia y sin ánimo de lucro</Heading>
+          <Heading size="md" marginTop={4}>Contribución a causas benéficas</Heading>
           <Text>
           En caso de que recibamos donaciones o patrocinios que superen los costes
           necesarios para mantener nuestro servicio, nos comprometemos a destinar
           los fondos adicionales a causas benéficas. Después de las elecciones
           detallaremos el coste del servicio, el total de las donaciones y, en el
           caso de que proceda, la donación a la Cruz Roja.
+          </Text>
+          <Text marginTop={4}>
+          Para cualquier consulta, nos podéis contactar en <Link color="teal.500" href="mailto:qdsp.es@proton.me">qdsp.es@proton.me</Link>.
           </Text>
         </Box>
       </Flex>
