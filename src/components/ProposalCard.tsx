@@ -14,7 +14,8 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
-  Button
+  Button,
+  Link,
 } from "@chakra-ui/react";
 import { QuestionOutlineIcon } from '@chakra-ui/icons'
 
@@ -25,12 +26,17 @@ const colors = {
   vox: "#66bc2a",
 };
 
-const Context = ({context}) => (
+const BACKEND =
+  process.env.REACT_APP_ENV === "prod"
+    ? "https://api.quedicesuprograma.es"
+    : "http://localhost:4000";
+
+const Context = ({party, context}) => (
   <Box padding={4}>
-    <Text marginBottom={4}>Texto original en el programa 👇</Text>
+    <Text marginBottom={4}>Texto original en el programa de <Text as="span" fontWeight="bold" color={colors[party]}>{party.toUpperCase()}</Text>👇</Text>
 
     {context.map((text) => (
-      <Box paddingLeft={4} marginBottom={4} borderLeft="4px solid grey">
+      <Box paddingLeft={4} marginBottom={4} borderLeft="4px solid grey" textAlign="justify">
         <blockquote>...<Text fontSize={14} fontWeight="bold" as="span">{text}</Text>...</blockquote>
       </Box>
     ))}
@@ -39,6 +45,10 @@ const Context = ({context}) => (
       * Hacemos lo mejor que podemos para mostrar el contenido relacionado aquí,
       pero no siempre es tarea fácil. Es texto plano, por lo que títulos y parrafos
       pueden estar entremezclados. Si ves algo muy raro, por favor háznoslo saber.
+    </Text>
+
+    <Text>
+      Puedes descargar el programa de {party.toUpperCase()} <Link color='teal.500' target="_blank" href={`${BACKEND}/programas/${party}.pdf`}>aquí</Link>.
     </Text>
   </Box>
 )
@@ -60,7 +70,7 @@ export const ProposalCard = ({ party, content }) => {
             <ModalContent>
               <ModalCloseButton />
               <ModalBody>
-                <Context context={content.context} />
+                <Context party={party} context={content.context} />
               </ModalBody>
             </ModalContent>
           </Modal>
