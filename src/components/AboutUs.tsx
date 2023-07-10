@@ -61,9 +61,9 @@ export function AboutUs() {
           <Text>
           Queremos enfatizar que nuestro servicio es totalmente gratuito. No
           cobramos ninguna tarifa por acceder a la información proporcionada o por
-          realizar comparaciones en nuestro sitio web. Estamos comprometidos a
+          realizar comparaciones en nuestro sitio web. El único objetivo es
           facilitar el acceso a la información política de manera libre y gratuita
-          para todos los usuarios interesados.
+          para quien esté interesado.
           </Text>
           <Heading size="md" marginTop={4}>Costes y limitaciones de acceso</Heading>
           <Text>
