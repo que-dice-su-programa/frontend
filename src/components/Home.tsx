@@ -11,10 +11,8 @@ export function Home() {
 
   function handleSubmit(value: string) {
     event.preventDefault();
-    // The serialize function here would be responsible for
-    // creating an object of { key: value } pairs from the
-    // fields in the form that make up the query.
-    navigate(`/sobre/${encodeURIComponent(value).replace(new RegExp("%20", 'g'), "+")}`)
+    const query = value.toLowerCase().trim()
+    navigate(`/sobre/${encodeURIComponent(query).replace(new RegExp("%20", 'g'), "+")}`)
   }
   return (
     <Box padding={12} margin="auto" maxWidth={1650}>
