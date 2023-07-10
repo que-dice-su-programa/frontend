@@ -44,7 +44,7 @@ export function Home() {
           </p>
           <br />
           <p>
-            Los programas electorales no siempre son accesibles para la gente de a pie y creemos que es importante que los ciudadanos conozcan
+            Los programas electorales no siempre son accesibles para la gente de a pie y creemos que es importante que la ciudadanía conozca
             las propuestas de los partidos. <em>QueDiceSuPrograma</em> utiliza una combinación
             de <Link color='teal.500' href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales">Procesamiento del lenguaje natural</Link> sobre
             los programas electorales y <Link color='teal.500' href="https://openai.com/">ChatGPT</Link> para facilitar el acceso a esta información.
