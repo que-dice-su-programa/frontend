@@ -62,7 +62,8 @@ export function Home() {
           <br />
           <p>
             Para saber qué proponen los partidos políticos sobre un determinado
-            tema, <b>utiliza la caja de búsqueda de arriba</b>.
+            tema, <b>completa la pregunta ¿qué dice su programa sobre ...?</b> utilizando
+            la caja texto de arriba.
           </p>
         </Box>
       </Box>
