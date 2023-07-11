@@ -8,7 +8,7 @@ import { Header } from "./Header";
 export function AboutUs() {
   return (
     <Box padding={12} margin="auto" css={css``}>
-      <Header />
+      <Header>¿Qué dice su programa?</Header>
       <Flex
         w="100%"
         height="80vh"

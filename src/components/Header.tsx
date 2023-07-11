@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Heading, Link, useMediaQuery } from "@chakra-ui/react";
 
-export const Header = () => {
+export const Header = ({ children }) => {
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   return (
@@ -11,7 +11,7 @@ export const Header = () => {
       textAlign="center"
       margin="45px auto"
     >
-      <Link href="/">¿Qué dice su programa?</Link>
+      <Link href="/">{ children }</Link>
     </Heading>
   );
 };

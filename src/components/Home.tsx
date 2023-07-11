@@ -26,7 +26,7 @@ export function Home() {
       margin="0 auto"
       padding={12}
     >
-      <Header />
+      <Header>¿Qué dice su programa sobre __________?</Header>
       <Box maxWidth={540} height="100%">
         <SearchBox
           autoFocus
