@@ -77,11 +77,15 @@ export function Results() {
     }
   }, [query]);
 
-  React.useEffect(() => {
-    console.log("isLoading", isLoading);
-  }, [isLoading]);
   return (
-    <Flex flexDirection="column" justifyContent="space-between" padding={12} margin="auto" maxWidth={1705} minHeight="100vh">
+    <Flex
+      flexDirection="column"
+      justifyContent="space-between"
+      padding={12}
+      margin="auto"
+      maxWidth={1705}
+      minHeight="100vh"
+    >
       <Heading as="h1" textAlign="center" marginBottom="50px">
         ¿Qué dice su programa sobre{" "}
         <Text as="span" textDecoration="underline">
@@ -90,13 +94,11 @@ export function Results() {
         ?
       </Heading>
       {isLoading && (
-        <Text textAlign="center">Los 🤖 están recopilando información, a veces tardan unos segundos...</Text>
+        <Text textAlign="center">
+          Los 🤖 están recopilando información, a veces tardan unos segundos...
+        </Text>
       )}
-      <SimpleGrid
-        minChildWidth="300px"
-        spacing="40px"
-        marginY="24px"
-      >
+      <SimpleGrid minChildWidth="300px" spacing="40px" marginY="24px">
         {isLoading ? (
           <>
             <Skeleton maxW="md" height={375} />
@@ -112,21 +114,34 @@ export function Results() {
           ))
         )}
       </SimpleGrid>
-        <Flex alignItems="center" flexDirection="column" width="100%" justifyContent="space-between">
-          <Text fontSize="sm" textAlign="center" maxWidth={800} marginBottom={12}>
-            ¿No encuentras lo que buscas? Puedes probar a reformular tu pregunta. El lenguaje más natural suele funcionar mejor, por ejemplo poner "el paro" en lugar de solamente "paro".
-          </Text>
-          <Flex alignItems="center" justify="space-evenly" flexWrap="wrap" flexDirection="row" width="100%">
-            <Link href={shareLink(query)} target="_blank">
-              <Button variant="ghost" leftIcon={<ArrowUpIcon />} width={180}>
-                Compartir
-              </Button>
-            </Link>
-            <Link href="/">
-              <Button variant="ghost" leftIcon={<ChatIcon />} width={180}>
-                Hacer otra pregunta
-              </Button>
-            </Link>
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        width="100%"
+        justifyContent="space-between"
+      >
+        <Text fontSize="sm" textAlign="center" maxWidth={800} marginBottom={12}>
+          ¿No encuentras lo que buscas? Puedes probar a reformular tu pregunta.
+          El lenguaje más natural suele funcionar mejor, por ejemplo poner "el
+          paro" en lugar de solamente "paro".
+        </Text>
+        <Flex
+          alignItems="center"
+          justify="space-evenly"
+          flexWrap="wrap"
+          flexDirection="row"
+          width="100%"
+        >
+          <Link href={shareLink(query)} target="_blank">
+            <Button variant="ghost" leftIcon={<ArrowUpIcon />} width={180}>
+              Compartir
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button variant="ghost" leftIcon={<ChatIcon />} width={180}>
+              Hacer otra pregunta
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </Flex>
