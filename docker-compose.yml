@@ -7,3 +7,7 @@ services:
       - backend.env
     environment:
       SECRET_KEY_BASE: "secret"
+      REDIS_HOST: "redis"
+
+  redis:
+    image: redis
