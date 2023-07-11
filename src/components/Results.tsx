@@ -10,6 +10,9 @@ import {
   Heading,
   Text,
   Button,
+  Alert,
+  AlertIcon,
+  AlertDescription,
 } from "@chakra-ui/react";
 import { ArrowUpIcon, ChatIcon } from "@chakra-ui/icons";
 import { ProposalCard } from "./ProposalCard";
@@ -94,9 +97,13 @@ export function Results() {
         ?
       </Heading>
       {isLoading && (
-        <Text textAlign="center">
-          Los 🤖 están recopilando información, a veces tardan unos segundos...
-        </Text>
+        <Alert status="info">
+          <AlertIcon />
+          <AlertDescription>
+            Los 🤖 están recopilando información, a veces tardan unos
+            segundos...
+          </AlertDescription>
+        </Alert>
       )}
       <SimpleGrid minChildWidth="300px" spacing="40px" marginY="24px">
         {isLoading ? (
