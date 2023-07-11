@@ -77,7 +77,7 @@ export const ProposalCard = ({ party, content }) => {
         </Flex>
       <Box height={2} backgroundColor={colors[party]} />
       </CardHeader>
-      <CardBody overflow="scroll">
+      <CardBody overflowY="auto">
         <Text>{content.result}</Text>
       </CardBody>
 
