@@ -133,12 +133,12 @@ export function Results() {
           width="100%"
         >
           <Link href={shareLink(query)} target="_blank">
-            <Button variant="ghost" leftIcon={<ArrowUpIcon />} width={180}>
+            <Button variant="ghost" leftIcon={<ArrowUpIcon />} width={210}>
               Compartir
             </Button>
           </Link>
           <Link href="/">
-            <Button variant="ghost" leftIcon={<ChatIcon />} width={180}>
+            <Button variant="ghost" leftIcon={<ChatIcon />} width={210}>
               Hacer otra pregunta
             </Button>
           </Link>
