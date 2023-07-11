@@ -32,6 +32,12 @@ export function AboutUs() {
           es facilitar el acceso a la información sobre los programas electorales
           de los partidos, sin ningún interés económico de por medio.
           </Text>
+          <Heading size="md" marginTop={4}>Transparencia</Heading>
+          <Text>
+          Este es un proyecto de código abierto, por lo cuál el contenido, la
+          tecnología y el trabajo detrás de esta web se puede explorar de manera
+          totalmente transparente. Puedes acceder a esta información en <Link color="teal.500" href="https://github.com/que-dice-su-programa">GitHub</Link>.
+          </Text>
           <Heading size="md" marginTop={4}>Aviso de responsabilidad</Heading>
           <Text>
           Si bien nos esforzamos por brindar información precisa y coherente, es
