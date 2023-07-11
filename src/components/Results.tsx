@@ -58,6 +58,7 @@ const shareLink = (query) => {
 export function Results() {
   const { query: rawQuery } = useParams();
   const query = rawQuery.replace(/\+/g, " ");
+  const [error, setError] = React.useState(null);
   const [results, setResults] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -70,11 +71,16 @@ export function Results() {
         })
         .then(function (response) {
           console.log(response);
-          setResults(normalizeResults(response.data));
+          if (response.status === 200) {
+            setResults(normalizeResults(response.data));
+          } else {
+            setError(response.status);
+          }
           setIsLoading(false);
         })
         .catch(function (error) {
           console.log(error);
+          setError(999);
           setIsLoading(false);
         });
     }
@@ -113,6 +119,26 @@ export function Results() {
             <Skeleton maxW="md" height={375} />
             <Skeleton maxW="md" height={375} />
           </>
+        ) : error ? (
+          error === 429 ? (
+            <Alert status="warning">
+              <AlertIcon />
+              <AlertDescription>
+                Demasiadas preguntas consecutivas 🔥, espera unos segundos y
+                vuelve a intentarlo.
+              </AlertDescription>
+            </Alert>
+          ) : (
+            <Alert status="error">
+              <AlertIcon />
+              <AlertDescription>
+                Algo no ha ido bien 💥. Si no se soluciona, puedes escribirnos a{" "}
+                <Link color="teal.500" href="mailto:qdsp.es@proton.me">
+                  qdsp.es@proton.me
+                </Link>
+              </AlertDescription>
+            </Alert>
+          )
         ) : (
           results.map((content) => (
             <Box w="100%" maxHeight={450}>
