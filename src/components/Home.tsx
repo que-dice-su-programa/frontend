@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { Header } from "./Header";
 import { SearchBox } from "./SearchBox";
+import KofiButton from "kofi-button"
 const qs = require("qs");
 
 export function Home() {
@@ -64,6 +65,9 @@ export function Home() {
             tema, <b>utiliza la caja de búsqueda de arriba</b>.
           </p>
         </Box>
+      </Box>
+      <Box marginTop={8}>
+        <KofiButton color="#0a9396" title="Ayuda a mantenerlo en marcha" kofiID="L3L5N3U9K" />
       </Box>
       <Text
         fontSize="12px"
