@@ -22,14 +22,12 @@ export function Home() {
         maxWidth={540}
         minHeight="100vh"
         margin="0 auto"
-        textAlign="justify"
         padding={12}
       >
       <Header />
       <Box
         maxWidth={540}
         height="100%"
-        textAlign="justify"
       >
         <SearchBox
           autoFocus

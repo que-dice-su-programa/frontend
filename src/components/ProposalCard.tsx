@@ -33,11 +33,14 @@ const BACKEND =
 
 const Context = ({party, context}) => (
   <Box padding={4}>
-    <Text marginBottom={4}>Texto original en el programa de <Text as="span" fontWeight="bold" color={colors[party]}>{party.toUpperCase()}</Text>👇</Text>
+    <Text marginBottom={4}>
+      Este es el texto original extraído del programa de <Text as="span" fontWeight="bold" color={colors[party]}>{party.toUpperCase()}</Text> en
+      el que se basa la respuesta👇
+    </Text>
 
     {context.map((text) => (
-      <Box paddingLeft={4} marginBottom={4} borderLeft="4px solid grey" textAlign="justify">
-        <blockquote>...<Text fontSize={14} fontWeight="bold" as="span">{text}</Text>...</blockquote>
+      <Box paddingLeft={4} marginBottom={4} borderLeft="4px solid grey">
+        <blockquote>...<Text fontSize={16} fontWeight="light" as="span">{text}</Text>...</blockquote>
       </Box>
     ))}
 
