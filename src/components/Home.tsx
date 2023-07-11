@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { Header } from "./Header";
 import { SearchBox } from "./SearchBox";
-import KofiButton from "kofi-button"
+import { AboutUsFooter } from "./AboutUsFooter";
 const qs = require("qs");
 
 export function Home() {
@@ -62,23 +62,12 @@ export function Home() {
           <br />
           <p>
             Para saber qué proponen los partidos políticos sobre un determinado
-            tema, <b>completa la pregunta ¿qué dice su programa sobre ...?</b> utilizando
-            la caja texto de arriba.
+            tema, <b>completa la pregunta ¿qué dice su programa sobre ...?</b>{" "}
+            utilizando la caja texto de arriba.
           </p>
         </Box>
       </Box>
-      <Box marginTop={8}>
-        <KofiButton color="#0a9396" title="Ayuda a mantenerlo en marcha" kofiID="L3L5N3U9K" />
-      </Box>
-      <Text
-        fontSize="12px"
-        marginTop="20px"
-        lineHeight="1.5"
-        color="blackAlpha.600"
-      >
-        Si quieres saber más sobre este proyecto,{" "}
-        <Link href="/quienes-somos">haz click aquí</Link>
-      </Text>
+      <AboutUsFooter />
     </Flex>
   );
 }

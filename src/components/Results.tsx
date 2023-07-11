@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
+import { AboutUsFooter } from "./AboutUsFooter";
 
 import {
   Box,
@@ -18,6 +19,7 @@ import { ArrowUpIcon, ChatIcon } from "@chakra-ui/icons";
 import { ProposalCard } from "./ProposalCard";
 import { shuffle } from "../util";
 import axios from "axios";
+import KofiButton from "kofi-button";
 
 const normalizeResults = (results) => {
   if (results) {
@@ -150,6 +152,7 @@ export function Results() {
             </Button>
           </Link>
         </Flex>
+        <AboutUsFooter />
       </Flex>
     </Flex>
   );
