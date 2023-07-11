@@ -86,7 +86,7 @@ export function Results() {
       justifyContent="space-between"
       padding={12}
       margin="auto"
-      maxWidth={1705}
+      maxWidth={900}
       minHeight="100vh"
     >
       <Heading as="h1" textAlign="center" marginBottom="50px">
