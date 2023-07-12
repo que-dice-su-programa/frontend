@@ -70,17 +70,11 @@ export function Results() {
           q: query,
         })
         .then(function (response) {
-          console.log(response);
-          if (response.status === 200) {
-            setResults(normalizeResults(response.data));
-          } else {
-            setError(response.status);
-          }
+          setResults(normalizeResults(response.data));
           setIsLoading(false);
         })
         .catch(function (error) {
-          console.log(error);
-          setError(999);
+          setError(error.status);
           setIsLoading(false);
         });
     }
