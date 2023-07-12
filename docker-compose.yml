@@ -1,6 +1,6 @@
 services:
   backend:
-    image: europe-southwest1-docker.pkg.dev/qdsp-389210/cloud-run-source-deploy/qdsp-backend/qdsp:latest
+    image: europe-west1-docker.pkg.dev/qdsp-389210/cloud-run-source-deploy/qdsp-backend/qdsp-west-1:latest
     ports:
       - "4000:4000"
     env_file:
