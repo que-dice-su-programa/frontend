@@ -56,6 +56,8 @@ const Context = ({party, context}) => (
   </Box>
 )
 
+const DefaultResult = () => (<Text color="gray.500">No se mencionan medidas específicas sobre este tema en su programa.</Text>)
+
 export const ProposalCard = ({ party, content }) => {
   const logoPath = `/logos/${party}.png`;
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -65,23 +67,29 @@ export const ProposalCard = ({ party, content }) => {
       <CardHeader>
         <Flex justify="space-between" alignItems="center">
           <Heading size="lg">{party.toUpperCase()}</Heading>
-          <Button width={12} variant="ghost" onClick={onOpen}>
-            <QuestionOutlineIcon aria-label="Ver Fuente" />
-          </Button>
-          <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
-            <ModalOverlay />
-            <ModalContent>
-              <ModalCloseButton />
-              <ModalBody>
-                <Context party={party} context={content.context} />
-              </ModalBody>
-            </ModalContent>
-          </Modal>
+          {
+            content.context.length > 0 && (
+              <>
+              <Button width={12} variant="ghost" onClick={onOpen}>
+                <QuestionOutlineIcon aria-label="Ver Fuente" />
+              </Button>
+              <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <Context party={party} context={content.context} />
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
+              </>
+            )
+          }
         </Flex>
       <Box height={2} backgroundColor={colors[party]} />
       </CardHeader>
       <CardBody overflowY="auto">
-        <Text>{content.result}</Text>
+        {content.result ? <Text>{content.result}</Text> : <DefaultResult /> }
       </CardBody>
 
       <CardFooter
