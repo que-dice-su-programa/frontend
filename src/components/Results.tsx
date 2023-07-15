@@ -91,12 +91,14 @@ export function Results() {
       maxWidth={900}
       minHeight="100vh"
     >
-      <Heading as="h1" textAlign="center" marginBottom="50px">
-        ¿Qué dice su programa sobre{" "}
-        <Text as="span" textDecoration="underline">
-          {query}
-        </Text>
-        ?
+      <Heading as="h3" textAlign="center" marginBottom="50px">
+        <Link href="/">
+          ¿Qué dice su programa sobre{" "}
+          <Text as="span" textDecoration="underline">
+            {query}
+          </Text>
+          ?
+        </Link>
       </Heading>
       {isLoading && (
         <Alert status="info">

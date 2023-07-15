@@ -73,7 +73,7 @@ export const SearchBox = ({
           />
           <InputRightElement width="4.5rem" margin="auto" bottom="0">
             <IconButton
-              aria-label="Buscar"
+              aria-label="Buscar en los programas electorales"
               h="1.75rem"
               size="sm"
               onClick={() => {

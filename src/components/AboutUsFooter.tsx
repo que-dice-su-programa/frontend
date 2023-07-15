@@ -18,8 +18,7 @@ export function AboutUsFooter() {
         lineHeight="1.5"
         color="blackAlpha.600"
       >
-        Si quieres saber más sobre este proyecto,{" "}
-        <Link href="/quienes-somos">haz click aquí</Link>
+        <Link href="/quienes-somos">Si quieres saber más sobre este proyecto, haz click aquí</Link>
       </Text>
     </>
   );
