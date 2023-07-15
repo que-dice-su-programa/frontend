@@ -27,7 +27,13 @@ export function Home() {
       margin="0 auto"
       padding={12}
     >
-      <Header>¿Qué dice su programa sobre __________?</Header>
+      <Header>
+        ¿Qué dice su programa sobre{" "}
+        <Text as="u">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{" "}
+        </Text>
+        ?
+      </Header>
       <Box maxWidth={540} height="100%">
         <SearchBox
           autoFocus
@@ -49,12 +55,17 @@ export function Home() {
             combinación de{" "}
             <Link
               color="teal.500"
+              textDecoration="underline"
               href="https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales"
             >
               Procesamiento del lenguaje natural
             </Link>{" "}
             sobre los programas electorales y{" "}
-            <Link color="teal.500" href="https://openai.com/">
+            <Link
+              color="teal.500"
+              textDecoration="underline"
+              href="https://openai.com/"
+            >
               ChatGPT
             </Link>{" "}
             para facilitar el acceso a esta información.
@@ -63,7 +74,7 @@ export function Home() {
           <p>
             Para saber qué proponen los partidos políticos sobre un determinado
             tema, <b>completa la pregunta ¿qué dice su programa sobre ...?</b>{" "}
-            utilizando la caja texto de arriba.
+            utilizando la caja de texto de arriba.
           </p>
         </Box>
       </Box>

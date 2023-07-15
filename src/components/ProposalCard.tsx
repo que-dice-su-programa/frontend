@@ -35,7 +35,7 @@ const Context = ({party, context}) => (
   <Box padding={4}>
     <Text marginBottom={4}>
       Este es el texto original extraído del programa de <Text as="span" fontWeight="bold" color={colors[party]}>{party.toUpperCase()}</Text> en
-      el que se basa la respuesta👇
+      el que se basa la respuesta<span role="img" aria-hidden="true">👇</span>
     </Text>
 
     {context.map((text) => (
@@ -46,7 +46,7 @@ const Context = ({party, context}) => (
 
     <Text marginBottom={4} fontSize={12}>
       * Hacemos lo mejor que podemos para mostrar el contenido relacionado aquí,
-      pero no siempre es tarea fácil. Es texto plano, por lo que títulos y parrafos
+      pero no siempre es tarea fácil. Es texto plano, por lo que títulos y párrafos
       pueden estar entremezclados. Si ves algo muy raro, por favor háznoslo saber.
     </Text>
 
@@ -66,7 +66,7 @@ export const ProposalCard = ({ party, content }) => {
         <Flex justify="space-between" alignItems="center">
           <Heading size="lg">{party.toUpperCase()}</Heading>
           <Button width={12} variant="ghost" onClick={onOpen}>
-            <QuestionOutlineIcon />
+            <QuestionOutlineIcon aria-label="Ver Fuente" />
           </Button>
           <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
             <ModalOverlay />
