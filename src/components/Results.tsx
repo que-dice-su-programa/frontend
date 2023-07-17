@@ -139,9 +139,9 @@ export function Results() {
           )
         ) : (
           results.map((content) => (
-            <Box w="100%" maxHeight={450}>
+            <Flex maxHeight={450} width="100%" flexDirection="column" alignItems="center">
               <ProposalCard party={content.party} content={content.proposal} />
-            </Box>
+            </Flex>
           ))
         )}
       </SimpleGrid>
