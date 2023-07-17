@@ -44,7 +44,7 @@ const Context = ({party, context}) => (
       </Box>
     ))}
 
-    <Text marginBottom={4} fontSize={12}>
+    <Text marginBottom={4} fontSize={14} fontWeight="light">
       * Hacemos lo mejor que podemos para mostrar el contenido relacionado aquí,
       pero no siempre es tarea fácil. Es texto plano, por lo que títulos y párrafos
       pueden estar entremezclados. Si ves algo muy raro, por favor háznoslo saber.
